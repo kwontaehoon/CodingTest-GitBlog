@@ -28,3 +28,7 @@ a와 b의 대소관계는 정해져있지 않습니다.
 ### JavaScript
 
 <script src="https://gist.github.com/kwontaehoon/fc30172eea32eb6609fd3467b84cbd12.js"></script>
+
+### Refactoring
+
+comment: Math 객체를 활용하여 최솟값과 최댓값을 구분없이 바로 사용할 수 있다.

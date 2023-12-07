@@ -1,8 +1,8 @@
 ---
 layout : post
-title : 나누어 떨어지는 숫자 배열
+title : 없는 숫자 더하기
 categories : Programmers
-date : 2023-12-04
+date : 2023-12-07
 ---
 > 문제<br>
 
@@ -24,3 +24,5 @@ numbers의 모든 원소는 서로 다릅니다.
 > 코드
 
 ### JavaScript
+
+<script src="https://gist.github.com/kwontaehoon/377700d58ae3bdeac7286ca33f8baea4.js"></script>
