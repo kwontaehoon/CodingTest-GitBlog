@@ -23,8 +23,4 @@ str은 길이 1 이상인 문자열입니다.
 
 ### JavaScript
 
-<script src="https://gist.github.com/kwontaehoon/d1440a6598487b3a6716e0c5366874b4.js"></script>
-
-### Refactoring
-
-제곱근의 갯수가 정수면 약수의 갯수는 홀수개다
+<script src="https://gist.github.com/kwontaehoon/c03e134327f5c2176553a3aa5a1a5257.js"></script>

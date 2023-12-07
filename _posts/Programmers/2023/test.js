@@ -1,10 +1,9 @@
-function solution(left, right) {
-    console.log(Math.sqrt(16));
+function solution(arr1, arr2) {
     let sum = 0;
-    for(i=left; i<=right; i++){
-        Array(i).fill().map((_, index)=>index+1).filter(x=>i%x==0).length%2==0 ? sum+=i : sum-=i;
-    }
-    return sum;
+    const tt = arr1.join(",").split(",").map((x,index)=>Number(x)+Number(arr2.join(",").split(",")[index]));
+    console.log(tt);
+
+
 }
 
-console.log(solution(13, 17));
+console.log(solution([[1,2],[2,3]], [[3,4],[5,6]]));
