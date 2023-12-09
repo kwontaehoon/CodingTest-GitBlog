@@ -1,8 +1,8 @@
 ---
 layout : post
-title : 직사각형 별찍기
+title : 최대공약수와 최소공배수
 categories : Programmers
-date : 2023-12-09
+date : 2023-12-10
 ---
 > 문제<br>
 
@@ -13,7 +13,6 @@ date : 2023-12-09
 > 제한사항<br>
 
 두 수는 1이상 1000000이하의 자연수입니다.
-입출력 예
 
 > 입출력 예<br>
 
@@ -25,3 +24,5 @@ date : 2023-12-09
 > 코드
 
 ### JavaScript
+
+<script src="https://gist.github.com/kwontaehoon/c01093578f983841f6f023b8cb1b718f.js"></script>
