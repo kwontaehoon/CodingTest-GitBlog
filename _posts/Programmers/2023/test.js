@@ -1,9 +1,14 @@
-function solution(arr1, arr2) {
-    let sum = 0;
-    const tt = arr1.join(",").split(",").map((x,index)=>Number(x)+Number(arr2.join(",").split(",")[index]));
-    console.log(tt);
-
-
+function solution(n, m) {
+    let arr = [];
+    for(i=1; i<=1000000; i++){
+        arr.push(n*i, m*i);
+        if(n%i == m%i){
+            
+        }
+        if(d){
+            
+        }
+    }
 }
 
-console.log(solution([[1,2],[2,3]], [[3,4],[5,6]]));
+console.log(solution(2, 5));

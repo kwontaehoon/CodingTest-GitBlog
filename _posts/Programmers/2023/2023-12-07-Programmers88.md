@@ -22,5 +22,3 @@ date : 2023-12-07
 > 코드
 
 ### JavaScript
-
-<script src="https://gist.github.com/kwontaehoon/ed342335a1d313a525b38c9b13bb2a89.js"></script>
