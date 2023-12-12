@@ -1,11 +1,18 @@
-function solution(s) {
-    return s.split("").map((x, index, arr)=>{
-        if(arr.slice(0, index).lastIndexOf(x)+1 == 0){
-            return -1;
-        }else{
-            return index-arr.slice(0, index).lastIndexOf(x);
+function solution(strings, n){
+    return strings.sort((a, b) => {
+        const chr1 = a.charAt(n);
+        console.log("chr1: ", chr1);
+        const chr2 = b.charAt(n);
+        console.log("chr2: ", chr2);
+
+        if (chr1 == chr2) {
+            console.log("==: ", a>b, (a > b) - (a < b));
+            return (a > b) - (a < b);
+        } else {
+            console.log("else: ", (chr1 > chr2) ,(chr1 > chr2) - (chr1 < chr2));
+            return (chr1 > chr2) + (chr1 < chr2);
         }
-    });
+    })
 }
 
-console.log(solution("banana"));
+console.log(solution(["sun", "bed", "car", ], 1));
