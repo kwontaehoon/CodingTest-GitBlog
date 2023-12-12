@@ -175,11 +175,11 @@ console.log(arr); // [1, 2, 3]
 ```javascript
 const arr = [1, 2, 3];
 
-arr.inclueds(2); // true
+arr.includes(2); // true
 
-arr.inclueds(100); // false
+arr.includes(100); // false
 
-arr.inclueds(1, 1); // false
+arr.includes(1, 1); // false
 // 배열에 요소 1이 들어있는지 인덱스 1부터 확인
 ```
 * 배열 내에 특정 요소가 포함되어 있는지 확인하여 true/false를 반환한다.
@@ -192,3 +192,13 @@ arr.inclueds(1, 1); // false
 [1, [2, 3, 4, 5]].flat(); // [1, 2, 3, 4, 5]
 ```
 * 배열 평탄화
+
+<br>
+
+> Array 최솟값 / 최댓값
+
+```javascript
+const arr = [1, 2, 3];
+Math.min(...arr); // 1
+Math.max(...arr); // 3
+```

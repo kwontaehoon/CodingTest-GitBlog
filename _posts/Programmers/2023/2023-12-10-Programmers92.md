@@ -27,5 +27,3 @@ date : 2023-12-10
 > 코드
 
 ### JavaScript
-
-<script src="https://gist.github.com/kwontaehoon/77405e2d0c25b9bbaaa5450ca301ec38.js"></script>

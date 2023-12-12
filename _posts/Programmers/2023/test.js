@@ -1,15 +1,11 @@
-function solution(number) {
-    var answer = 0;
-    for (i = 0; i <= number.length; i++) {
-        for (j = i + 1; j < number.length; j++) {
-            console.log("aa: ", number[i], number.slice(j, j+2), number.slice(j, j+2).reduce((sum, curr)=>sum+curr));
-            if (number[i] + number.slice(j, j+2).reduce((sum, curr)=>sum+curr) == 0) {
-                console.log("gggggggggggggg: ", number[i], number.slice(j, j+2));
-                answer++;
-            }
+function solution(s) {
+    return s.split("").map((x, index, arr)=>{
+        if(arr.slice(0, index).lastIndexOf(x)+1 == 0){
+            return -1;
+        }else{
+            return index-arr.slice(0, index).lastIndexOf(x);
         }
-    }
-    console.log("answer: ", answer);
+    });
 }
 
-console.log(solution([-3, -2, -1, 0, 1, 2, 3]));
+console.log(solution("banana"));
