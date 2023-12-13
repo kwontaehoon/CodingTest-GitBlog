@@ -1,18 +1,16 @@
-function solution(strings, n){
-    return strings.sort((a, b) => {
-        const chr1 = a.charAt(n);
-        console.log("chr1: ", chr1);
-        const chr2 = b.charAt(n);
-        console.log("chr2: ", chr2);
-
-        if (chr1 == chr2) {
-            console.log("==: ", a>b, (a > b) - (a < b));
-            return (a > b) - (a < b);
-        } else {
-            console.log("else: ", (chr1 > chr2) ,(chr1 > chr2) - (chr1 < chr2));
-            return (chr1 > chr2) + (chr1 < chr2);
-        }
-    })
+function solution(food) {
+    const add = food.reduce((sum, curr) => sum + curr);
+    const result = Array.from({ length: add % 2 == 0 ? add - 1 : add - 2 }, (_, index) => 0);
+    food.map((x, index) => {
+        if (index == 0) { return; }
+        else {
+            let count = result.indexOf(0);
+            for (i = count; i < count + Math.floor(x / 2); i++) {
+                result[i] = result[result.length - i - 1] = index;
+            }
+        };
+    });
+    return String(result.join(""));
 }
 
-console.log(solution(["sun", "bed", "car", ], 1));
+console.log(solution([1,3,2,3]));
