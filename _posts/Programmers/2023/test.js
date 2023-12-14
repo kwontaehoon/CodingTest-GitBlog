@@ -1,16 +1,11 @@
-function solution(food) {
-    const add = food.reduce((sum, curr) => sum + curr);
-    const result = Array.from({ length: add % 2 == 0 ? add - 1 : add - 2 }, (_, index) => 0);
-    food.map((x, index) => {
-        if (index == 0) { return; }
-        else {
-            let count = result.indexOf(0);
-            for (i = count; i < count + Math.floor(x / 2); i++) {
-                result[i] = result[result.length - i - 1] = index;
-            }
-        };
-    });
-    return String(result.join(""));
+function solution(numbers) {
+    var answer = [];
+    for(i=0; i<=numbers.length; i++){
+        for(j=i+1; j<numbers.length; j++){
+            answer.push(numbers[i]+numbers[j]);
+        }
+    }
+    return [...new Set(answer)].sort((a, b) => a - b);
 }
 
-console.log(solution([1,3,2,3]));
+console.log(solution([2,1,3,4,1]));
