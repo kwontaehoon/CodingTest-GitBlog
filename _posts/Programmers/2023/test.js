@@ -1,11 +1,9 @@
-function solution(numbers) {
-    var answer = [];
-    for(i=0; i<=numbers.length; i++){
-        for(j=i+1; j<numbers.length; j++){
-            answer.push(numbers[i]+numbers[j]);
-        }
-    }
-    return [...new Set(answer)].sort((a, b) => a - b);
+function solution(name, yearning, photo) {
+    return photo.map(x=>{
+        return x.map(y=>{
+            return name.indexOf(y) == -1 ? 0 : yearning[name.indexOf(y)]
+        }).reduce((sum, curr)=>sum+curr);
+    });
 }
 
-console.log(solution([2,1,3,4,1]));
+console.log(solution(["may", "kein", "kain", "radi"], [5, 10, 1, 3], [["may", "kein", "kain", "radi"],["may", "kein", "brin", "deny"], ["kon", "kain", "may", "coni"]]));
