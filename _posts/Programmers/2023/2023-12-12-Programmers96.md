@@ -1,6 +1,6 @@
 ---
 layout : post
-title : 문자열 내 마음대로 정렬하기
+title : 푸드 파이트 대회
 categories : Programmers
 date : 2023-12-12
 ---
