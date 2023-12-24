@@ -1,17 +1,20 @@
-function solution(nums) {
-    var result = 0;
-    for(i=0; i<=nums.length; i++){
-        for(j=i+1; j<nums.length; j++){
-            for(k=j+1; k<nums.length; k++){
-                let sum = nums[i]+nums[j]+nums[k];
-                let count = 0;
-                for(q=1; q<=sum; q++){
-                    if(sum%q == 0)count++;
-                }
-                count == 2 ? result++ : ''
-            }
+function solution(number, limit, power) {
+
+    var answer = [];
+
+    for(i=1; i<=number; i++){
+        let count = 0;
+        for(j=1; j<=Math.sqrt(i); j++){
+            if(i == 1){ count++; continue; }
+            if(i%j == 0)count+=2;
+            if(i/j == Math.sqrt(i))count--;
         }
+        answer.push(count);
     }
-    return result;
+
+    return answer.reduce((sum, curr) => {
+        return curr > limit ? sum+power : sum+curr;
+    });
+   
 }
-console.log(solution([1,2,7,6,4]));
+console.log(solution(10, 3, 2));
