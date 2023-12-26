@@ -1,20 +1,10 @@
-function solution(number, limit, power) {
+function solution(N, stages) {
 
-    var answer = [];
+    const test = [[1, 3], [2, 1], [3, 2]];
 
-    for(i=1; i<=number; i++){
-        let count = 0;
-        for(j=1; j<=Math.sqrt(i); j++){
-            if(i == 1){ count++; continue; }
-            if(i%j == 0)count+=2;
-            if(i/j == Math.sqrt(i))count--;
-        }
-        answer.push(count);
-    }
-
-    return answer.reduce((sum, curr) => {
-        return curr > limit ? sum+power : sum+curr;
-    });
-   
+    test.sort((a,b) => b[1] - a[1]);
+    
+    console.log("test: ", test);
 }
-console.log(solution(10, 3, 2));
+
+console.log(solution(6, [2,1,2,4,2,4,3,3]));

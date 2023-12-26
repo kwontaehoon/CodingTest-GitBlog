@@ -17,8 +17,13 @@ console.log(fruits); // ['Apple', 'Banana', 'Orange']
 
 fruits.reverse(); // 내림차순 정렬
 console.log(fruits); // ['Orange', 'Banana', 'Apple']
+
+const test = [[1, 3], [2, 1], [3, 2]];
+test.sort((a,b) => b[1] - a[1]);
+console.log(test); // [[1,3], [3,2], [2,1] 처럼 두번째 index로 정렬을 할 수 있다.
 ```
 * 내림차순 정렬은 오름차순으로 정렬한 후 reverse 메서드를 사용한다.
+* 2차원 배열에서 해당 value의 순위를 매길 때 두번째 index를 가지고도 정렬을 할 수 있다.
 
 <br>
 
