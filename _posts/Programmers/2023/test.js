@@ -1,24 +1,23 @@
-function solution(n, lost, reserve) {
+function solution(keymap, targets) {
 
-    let answer = 0;
-    let lost_filter;
-    let reserve_filter;
+    var answer = [];
 
-    lost_filter = lost.filter(e => !reserve.includes(e)).sort((a, b)=> a-b);
-    reserve_filter = reserve.filter(e => !lost.includes(e)).sort((a, b)=> a-b);
+    for(i=0; i<targets.length; i++){
+        let count = 0;
+        for(j=0; j<targets[i].length; j++){
 
-    lost_filter.filter(x=>{
-        if(reserve_filter.includes(x-1)){
-            answer++;
-            reserve_filter.splice(reserve_filter.indexOf(x-1), 1);
-        }else if(reserve_filter.includes(x+1)){
-            answer++;
-            reserve_filter.splice(reserve_filter.indexOf(x+1), 1);
+            const arr = Math.min(...keymap.map(x=>{
+                return x.indexOf(targets[i].charAt(j)) + 1;
+            }).filter(x=>x !== 0));
+
+            if(isFinite(arr) == 0){
+                count = -1;
+                break;
+            }else{ count += isFinite(arr) ? arr : 0; }
         }
-    });
-    answer = n - lost_filter.length + answer;
-
+        count == 0 ? answer.push(-1) : answer.push(count);
+    }
     return answer;
 }
 
-console.log(solution(5, [4, 5], [3, 4]));
+console.log(solution(["ABCDE","ABBCE"], ["ABBEF"]));
