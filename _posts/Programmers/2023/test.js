@@ -1,23 +1,24 @@
-function solution(X, Y) {
-    
-    var answer = "";
-    let temp = "";
+function solution(n, lost, reserve) {
 
-    X.length > Y.length ? (console.log("hi"), temp = Y, Y = X, X = temp) : "";
-    X = X.split("").sort((a, b) => b - a).join("");
-    Y = Y.split("").sort((a, b) => b - a).join("");
+    let answer = 0;
+    let lost_filter;
+    let reserve_filter;
 
-    for(i=0; i<=X.length; i++){
-        if(Y.length == 0) break;
-        if(Y.includes(X.charAt(i))){
-            Y = Y.replace(X.charAt(i), "");
-            answer += X.charAt(i);
+    lost_filter = lost.filter(e => !reserve.includes(e)).sort((a, b)=> a-b);
+    reserve_filter = reserve.filter(e => !lost.includes(e)).sort((a, b)=> a-b);
+
+    lost_filter.filter(x=>{
+        if(reserve_filter.includes(x-1)){
+            answer++;
+            reserve_filter.splice(reserve_filter.indexOf(x-1), 1);
+        }else if(reserve_filter.includes(x+1)){
+            answer++;
+            reserve_filter.splice(reserve_filter.indexOf(x+1), 1);
         }
-    }
+    });
+    answer = n - lost_filter.length + answer;
 
-    console.log("answer: ", answer);
-
-    return answer == "" ? "-1" : answer == 0 ? "0" : answer;
+    return answer;
 }
 
-console.log(solution("5525", "1255"));
+console.log(solution(5, [4, 5], [3, 4]));
