@@ -1,24 +1,10 @@
-function solution(players, callings) {
+function solution(ingredient) {
 
-    const keyPlayers = {}
-    const keyRanks = {}
-
-    players.filter((x, index)=>{
-        const rank = index+1;
-        keyPlayers[x] = rank;
-        keyRanks[rank] = x;
-    })
-
-    callings.filter(x=>{
-        const losePlayer = keyRanks[keyPlayers[x]-1];
-
-        keyRanks[keyPlayers[x]] = losePlayer;
-        keyRanks[keyPlayers[losePlayer]] = x;
-        keyPlayers[x] -= 1;
-        keyPlayers[losePlayer] += 1;
-    })
-
-    return Object.values(keyRanks);
+    var answer = [];
+    
+    
+    
+    return answer;
 }
 
-console.log(solution(["mumu", "soe", "poe", "kai", "mine"], ["kai", "kai", "mine", "mine"]));
+console.log(solution([2, 1, 1, 2, 3, 1, 2, 3, 1]));
