@@ -3,3 +3,4 @@
 3. 문제에서는 3개가 고정인데 이게 고정이 안되있으면 DFS/BFS 문제로 이어질 수 있는 문제다. Number.107
 4. 그냥 for문 보다는 for of / for in 사용하기 Number.110
 5. includes 보다는 stack를 사용한 시간복잡도 문제 Number.121
+6. 정규표현식으로 변경 Number.122
