@@ -4,3 +4,4 @@
 4. 그냥 for문 보다는 for of / for in 사용하기 Number.110
 5. includes 보다는 stack를 사용한 시간복잡도 문제 Number.121
 6. 정규표현식으로 변경 Number.122
+7. 스택 효율 Number.127
