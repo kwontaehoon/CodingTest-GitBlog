@@ -1,11 +1,14 @@
-function solution(brown, yellow) {
+function solution(n) {
 
-    for(i=brown/2-1; i>=3; i--){
-        let height = (brown-i*2)/2+2;
-        if((i-2) * (height-2) == yellow){
-            return [i, height];
-        }
+    var answer = 0;
+
+    while(n !== 0){
+        if(n%2 === 0){
+            n /= 2
+        }else{n--; answer++;}
     }
+    
+    return answer
 }
 
-console.log(solution(24, 24));
+console.log(solution(6));
