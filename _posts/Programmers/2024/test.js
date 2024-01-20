@@ -1,14 +1,6 @@
-function solution(n) {
+function solution(n, a, b) {
 
-    var answer = 0;
-
-    while(n !== 0){
-        if(n%2 === 0){
-            n /= 2
-        }else{n--; answer++;}
-    }
     
-    return answer
 }
 
-console.log(solution(6));
+console.log(solution(8,4,7));
