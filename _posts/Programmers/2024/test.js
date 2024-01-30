@@ -1,22 +1,32 @@
-function solution(k, tangerine) {
+function solution(s) {
 
-    const arr = Array.from({length: tangerine.length}, () => 0);
+  const open = "[({";
+  const close = "])}";
 
-    for(i of tangerine){
-        arr[i-1] += 1;
+  let count = 0;
+
+  s = s.split("");
+
+  for(let i=0; i<s.length; i++){
+    let answer = [];
+    let lastElement = s.pop();
+    s.unshift(lastElement);
+    console.log("s: ", s);
+
+    for(let j of s){
+      if(open.indexOf(answer[answer.length-1]) !== -1 && open.indexOf(answer[answer.length-1]) == close.indexOf(j)){
+        answer.pop();
+      }else{
+        answer.push(j);
+      }
     }
-    arr.sort((a, b) =>b-a);
-    console.log("arr: ", arr);
-    
-    for(i=0; i<arr.length; i++){
-        console.log("i: ", i);
-        k -= arr[i];
-        console.log("k: ", k);
-        if(k <= 0){
-            return i+1;
-        }
-    }
-    
+
+    if(answer.length == 0 ) count++;
+    console.log("answer: ", answer);
+  }
+  return count;
+
+ 
 }
 
-console.log(solution(3, [1, 1, 2, 2]));
+console.log(solution("[](){}"));
