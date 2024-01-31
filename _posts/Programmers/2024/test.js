@@ -1,32 +1,15 @@
-function solution(s) {
+function solution(n, left, right) {
 
-  const open = "[({";
-  const close = "])}";
+  const answer = [];
 
-  let count = 0;
-
-  s = s.split("");
-
-  for(let i=0; i<s.length; i++){
-    let answer = [];
-    let lastElement = s.pop();
-    s.unshift(lastElement);
-    console.log("s: ", s);
-
-    for(let j of s){
-      if(open.indexOf(answer[answer.length-1]) !== -1 && open.indexOf(answer[answer.length-1]) == close.indexOf(j)){
-        answer.pop();
-      }else{
-        answer.push(j);
-      }
-    }
-
-    if(answer.length == 0 ) count++;
-    console.log("answer: ", answer);
-  }
-  return count;
-
- 
+  for(let i=left; i<=right; i++){
+    const divide = Math.floor(i/n);
+    const rest = i%n;
+    if(divide >= rest) answer.push(divide+1);
+    else answer.push(rest+1);
 }
 
-console.log(solution("[](){}"));
+  return answer;
+} 
+
+console.log(solution(3,2,5));
