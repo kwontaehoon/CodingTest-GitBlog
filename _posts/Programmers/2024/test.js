@@ -1,15 +1,21 @@
-function solution(n, left, right) {
+function solution(s) {
 
-  const answer = [];
+  let arr = [];
 
-  for(let i=left; i<=right; i++){
-    const divide = Math.floor(i/n);
-    const rest = i%n;
-    if(divide >= rest) answer.push(divide+1);
-    else answer.push(rest+1);
+  const parseStringToArray = (str) => {
+    const elements = str.slice(2, -2).split('},{').map(subStr => subStr.split(',').map(Number));
+    return elements;
+  };
+
+  s = parseStringToArray(s);
+
+  s.sort((a, b) => a.length - b.length);
+
+  for(let i of s){
+    let t = i.filter(x => !arr.includes(x)).join("");
+    arr = Number(arr + t);
+  }
+  return arr.split("");
 }
 
-  return answer;
-} 
-
-console.log(solution(3,2,5));
+console.log(solution("{{2},{2,1},{2,1,3},{2,1,3,4}}"));
