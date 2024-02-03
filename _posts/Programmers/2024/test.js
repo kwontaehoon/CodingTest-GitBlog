@@ -13,9 +13,9 @@ function solution(s) {
 
   for(let i of s){
     let t = i.filter(x => !arr.includes(x)).join("");
-    arr = Number(arr + t);
+    arr.push(Number(t));
   }
-  return arr.split("");
+  return arr;
 }
 
 console.log(solution("{{2},{2,1},{2,1,3},{2,1,3,4}}"));
