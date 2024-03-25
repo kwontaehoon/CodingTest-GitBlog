@@ -1,24 +1,42 @@
-function solution(numbers) {
+function solution(progresses, speeds) {
 
-  const answer = Array.from({length: numbers.length}, () => -1);
-  const stack = [];
+  var answer = [];
+  const arr = [];
+  let a = [];
 
-  for (let i = numbers.length - 1; i >= 0; i--) {
-    console.log(numbers[i]);
-      while (stack.length !== 0 && numbers[i] >= stack.at(-1)) {
-        console.log("while");
-        stack.pop();
-      }
-      if (stack.length !== 0){
-        answer[i] = stack.at(-1);
-      }
-      stack.push(numbers[i]);
+  for(let i=0; i<progresses.length; i++){
+
+    let sum = progresses[i];
+    let count = 0;
+    while(sum < 100){
+      sum += speeds[i];
+      count++;
+    }
+
+    arr.push(count);
+    console.log("arr: ", arr);
     
-      console.log("stack: ", stack);
-
-      console.log("answer: ", answer);
   }
+
+  let max = arr[0];
+  a.push(arr[0]);
+  arr.shift();
+  console.log("arr2: ", arr);
+
+  for(let i=0; i<arr.length; i++){
+    console.log("i: ", i);
+    if(max >= arr[i]){
+      a.push(arr[i]);
+    }else{
+      answer.push(a.length);
+      a = [arr[i]];
+      max = arr[i];
+    }
+    console.log("a: ", a);
+  }
+  answer.push(a.length);
+
   return answer;
 }
 
-console.log(solution([9,1,5,3,6,2]));
+console.log(solution([98,99,98], [1,1,1]));
