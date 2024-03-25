@@ -1,21 +1,24 @@
-function solution(s) {
+function solution(numbers) {
 
-  let arr = [];
+  const answer = Array.from({length: numbers.length}, () => -1);
+  const stack = [];
 
-  const parseStringToArray = (str) => {
-    const elements = str.slice(2, -2).split('},{').map(subStr => subStr.split(',').map(Number));
-    return elements;
-  };
+  for (let i = numbers.length - 1; i >= 0; i--) {
+    console.log(numbers[i]);
+      while (stack.length !== 0 && numbers[i] >= stack.at(-1)) {
+        console.log("while");
+        stack.pop();
+      }
+      if (stack.length !== 0){
+        answer[i] = stack.at(-1);
+      }
+      stack.push(numbers[i]);
+    
+      console.log("stack: ", stack);
 
-  s = parseStringToArray(s);
-
-  s.sort((a, b) => a.length - b.length);
-
-  for(let i of s){
-    let t = i.filter(x => !arr.includes(x)).join("");
-    arr.push(Number(t));
+      console.log("answer: ", answer);
   }
-  return arr;
+  return answer;
 }
 
-console.log(solution("{{2},{2,1},{2,1,3},{2,1,3,4}}"));
+console.log(solution([9,1,5,3,6,2]));
