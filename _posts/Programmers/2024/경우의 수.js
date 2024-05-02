@@ -3,12 +3,15 @@ function solution(clothes) {
 
     // 각 종류별 의상 수 계산
     for (let [name, type] of clothes) {
+        console.log("type: ", type);
         if (types.has(type)) {
             types.set(type, types.get(type) + 1);
         } else {
             types.set(type, 1);
         }
+        console.log("types: ", types);
     }
+    console.log("types: ", types);
 
     let answer = 1;
 
@@ -23,4 +26,4 @@ function solution(clothes) {
 
 // 테스트
 const clothes = [["yellow_hat", "headgear"], ["blue_sunglasses", "eyewear"], ["green_turban", "headgear"]];
-console.log(solution(clothes)); // 출력: 3
+console.log(solution(clothes));
